@@ -1,0 +1,47 @@
+{
+  "name": "jardispsr/sharedkernel",
+  "version": "1.0.0",
+  "description": "This package provides domain shared kernel interfaces for a domain driven design approach",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Jardis Core Development",
+      "email": "jardisCore@headgent.dev"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "jardispsr/dbconnection": "^1.0",
+    "jardispsr/dbquery": "^1.0",
+    "jardispsr/factory": "^1.0",
+    "jardispsr/messaging": "^1.0",
+    "jardispsr/validation": "^1.0",
+    "psr/simple-cache": "^3.0",
+    "psr/log": "^3.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.0.4",
+    "squizlabs/php_codesniffer": "^3.11.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "JardisPsr\\SharedKernel\\": "src/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "echo '#!/usr/bin/env bash' > .git/hooks/pre-commit",
+      "echo 'bash ./support/pre-commit-hook.sh' >> .git/hooks/pre-commit",
+      "chmod +x .git/hooks/pre-commit"
+    ]
+  },
+  "homepage": "https://github.com/JardisPsr/sharedkernel",
+  "support": {
+    "issues": "https://github.com/JardisPsr/sharedkernel/issues",
+    "email": "jardisCore@headgent.dev"
+  },
+  "keywords": ["domain" ,"sharedkernel", "kernel","interfaces", "JardisPsr", "Headgent", "DDD"]
+}
